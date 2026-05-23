@@ -30,7 +30,7 @@ Tse = [0,0,1,0;
               0,0,0,1];
 
 % Control gains (Proportional and Integral)
-Kp = diag([7,7,7,7,7,7]);
+Kp = diag([4.5,4.5,4.5,4.5,4.5,4.5]);
 Ki = diag([0,0,0,0,0,0]);
 
 

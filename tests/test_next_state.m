@@ -45,4 +45,9 @@ end
 % Close file
 fclose(fileID);
 
+expected_configuration = [0, 0.476, 0, 0, 0, 0, 0, 0, 10, 10, 10, 10];
+assert(numel(current_configuration) == 12);
+assert(all(isfinite(current_configuration)));
+assert(max(abs(current_configuration - expected_configuration)) < 1e-9);
+
 disp(['Simulation complete. Data saved to ', filename]);

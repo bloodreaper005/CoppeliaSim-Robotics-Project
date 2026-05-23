@@ -2,7 +2,7 @@
 
 This repository is a cleaned, GitHub-ready version of a CoppeliaSim mobile-manipulator project.
 
-The original shared PDF report was intentionally omitted because it contained other students' names and email addresses. Add your own report, screenshots, and results before publishing the repository as your project portfolio.
+The original shared PDF report was intentionally omitted because it contained other students' names and email addresses. This repository includes the owner's final report and extracted result figures instead.
 
 Several rigid-body motion, kinematics, and trajectory helper functions follow the notation and structure of the Modern Robotics textbook/course library:
 

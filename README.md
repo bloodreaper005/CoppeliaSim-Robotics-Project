@@ -10,14 +10,26 @@ MATLAB implementation of a feedback-control pipeline for a KUKA youBot-style mob
 - Converts desired end-effector twist into wheel and joint velocities through the mobile manipulator Jacobian.
 - Writes CSV outputs that can be loaded into the CoppeliaSim scene.
 
+## Results At A Glance
+
+| Scenario | Controller | Result |
+|---|---|---|
+| Best case | `Kp = 4.5 * I`, `Ki = 0` | Fast convergence with stable pick-and-place motion. |
+| Overshoot | `Kp = 5 * I`, `Ki = 0.5 * I` | More aggressive response with visible oscillation. |
+| New task | `Kp = 3 * I`, `Ki = 0` | Stable completion after changing cube start/end positions. |
+
+![Best case end-effector error](docs/results/best-case-error.jpg)
+
+More plots and video links are summarized in [`docs/RESULTS.md`](docs/RESULTS.md).
+
 ## Repository Structure
 
 ```text
 src/       MATLAB functions for kinematics, trajectory generation, and control
 scripts/   Main runnable project script
-tests/     Small verification scripts
+tests/     MATLAB validation scripts
 outputs/   Generated CSV files, ignored by git
-docs/      Add your own report, screenshots, and notes here
+docs/      Report, result plots, reproducibility notes, and project notes
 ```
 
 ## Requirements
@@ -42,17 +54,22 @@ Generated files are written to `outputs/`:
 ## Quick Check
 
 ```matlab
-run("tests/test_next_state.m")
+run("tests/run_all_tests.m")
 ```
 
-This writes a short forward-motion CSV to `outputs/youbot_simulation.csv`.
+This runs lightweight validation scripts for state updates, trajectory shape, transform helpers, and feedback-control output dimensions.
 
-## Report
+## Report And Evidence
 
-The final project report is available at [`docs/MAE-204-Final-Report.pdf`](docs/MAE-204-Final-Report.pdf).
+- Final report: [`docs/MAE-204-Final-Report.pdf`](docs/MAE-204-Final-Report.pdf)
+- Results summary: [`docs/RESULTS.md`](docs/RESULTS.md)
+- Reproducibility notes: [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md)
+- Credibility checklist: [`docs/CREDIBILITY_CHECKLIST.md`](docs/CREDIBILITY_CHECKLIST.md)
 
-## Notes Before Publishing
+## Verification Status
 
-The original PDF report from the shared archive was removed because it contained other students' personal information. Add your own report and results in `docs/` if you want the GitHub repository to represent your work cleanly.
+The repository cleanup verified file structure, attribution, privacy, README links, and static MATLAB references. Runtime verification was not performed during cleanup because MATLAB and CoppeliaSim were not available in that environment.
 
-Also update this README with your own screenshots, tuned gains, CoppeliaSim scene name, and a short explanation of what you personally changed or improved.
+## Attribution
+
+Several helper functions follow Modern Robotics textbook/course conventions. See [`NOTICE.md`](NOTICE.md) for details.
