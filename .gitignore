@@ -1,0 +1,11 @@
+.DS_Store
+*.asv
+*.m~
+
+# Generated simulation outputs
+outputs/*
+!outputs/.gitkeep
+
+# Keep private or old shared reports out of the public repo.
+FINAL PROJECT REPORT*.pdf
+docs/private/
