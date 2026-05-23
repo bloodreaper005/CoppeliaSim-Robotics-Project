@@ -47,6 +47,10 @@ run("tests/test_next_state.m")
 
 This writes a short forward-motion CSV to `outputs/youbot_simulation.csv`.
 
+## Report
+
+The final project report is available at [`docs/MAE-204-Final-Report.pdf`](docs/MAE-204-Final-Report.pdf).
+
 ## Notes Before Publishing
 
 The original PDF report from the shared archive was removed because it contained other students' personal information. Add your own report and results in `docs/` if you want the GitHub repository to represent your work cleanly.
